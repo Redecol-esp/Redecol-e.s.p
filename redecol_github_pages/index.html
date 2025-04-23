@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>REDECOL - Certificados y Caracterización</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Registro de Empresa / Usuario -->
+    <div class="card">
+      <h2>Registro de Empresa / Usuario</h2>
+      <form id="registroEmpresa">
+        <input type="text" id="nombreEmpresa" placeholder="Nombre completo o razón social" required />
+        <input type="text" id="nit" placeholder="NIT o cédula" required />
+        <input type="text" id="ubicacion" placeholder="Dirección o ciudad" required />
+        <select id="sector" required>
+          <option value="">Seleccione sector</option>
+          <option value="Residencial">Residencial</option>
+          <option value="Comercial">Comercial</option>
+          <option value="Institucional">Institucional</option>
+          <option value="Industrial">Industrial</option>
+        </select>
+        <button type="submit">Registrar</button>
+      </form>
+    </div>
+
+    <!-- Certificado de Aprovechamiento -->
+    <div class="card">
+      <h2>Certificado de Aprovechamiento</h2>
+      <input type="text" id="empresaCert" placeholder="Nombre de la Empresa o Usuario" />
+      <input type="text" id="nitCert" placeholder="NIT o documento de identificación" />
+      <input type="date" id="fechaCert" />
+
+      <div class="row">
+        <input type="text" id="residuo1" placeholder="Material reciclado" />
+        <input type="text" id="cantidad1" placeholder="Cantidad" />
+        <input type="text" id="unidad1" placeholder="Unidad" />
+      </div>
+
+      <div class="row">
+        <input type="text" id="residuo2" placeholder="Material reciclado" />
+        <input type="text" id="cantidad2" placeholder="Cantidad" />
+        <input type="text" id="unidad2" placeholder="Unidad" />
+      </div>
+
+      <button onclick="generarCertificado()">Generar certificado</button>
+    </div>
+
+    <!-- Caracterización por Residuos -->
+    <div class="card">
+      <h2>Caracterización por Residuos</h2>
+      <input type="text" id="empresaCar" placeholder="Nombre o Empresa" />
+      <textarea id="descripcionResiduos" rows="4" placeholder="Describa tipo, cantidad, frecuencia de residuos"></textarea>
+      <button onclick="generarCaracterizacion()">Generar Caracterización</button>
+    </div>
+  </div>
+</body>
+</html>
